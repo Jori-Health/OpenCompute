@@ -8,7 +8,7 @@ A beginner-friendly, offline agent that converts a folder of PDFs/TXTs into stru
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/Jori-Health/OpenCompute.git
 cd firstAgent
 
 # Create a virtual environment (recommended)
