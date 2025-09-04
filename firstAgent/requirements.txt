@@ -1,0 +1,7 @@
+click>=8.1
+loguru>=0.7
+python-dotenv>=1.0
+pydantic>=2.6
+pypdf>=4.2
+rapidfuzz>=3.9
+pytest>=8.0

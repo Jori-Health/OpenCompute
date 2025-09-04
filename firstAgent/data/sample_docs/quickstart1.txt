@@ -1,0 +1,10 @@
+Python Programming Guide
+
+Python is a versatile programming language used for web development, data science, and automation.
+
+Key features include:
+- Simple syntax
+- Large standard library
+- Cross-platform compatibility
+
+Popular frameworks include Django, Flask, and FastAPI for web development.

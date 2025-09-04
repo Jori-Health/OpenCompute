@@ -1,0 +1,49 @@
+# Project Goal
+Build a beginner-friendly, offline agent that converts a folder of PDFs/TXTs into:
+- cards.jsonl (one knowledge card per source)
+- chunks.jsonl (stable chunks with provenance)
+- manifest.json (provenance + checksums)
+
+
+# Non-Goals (v0)
+No LLMs. No embeddings. No network calls. Keep fast, small, and testable.
+
+
+# Tech & Style
+- Python 3.11. Use type hints, Pydantic v2 for schemas, Click for CLI, Loguru for logs.
+- Keep functions pure where possible. Avoid side effects except in CLI and writers.
+- Prefer simple, readable code over cleverness. Comment intent above tricky blocks.
+
+
+# Data Contracts
+- KnowledgeCard = { id, title, date?, source_path, facts[<=5], acronyms[], entities[], citations[] }
+- Chunk = { id, doc_id, ordinal, text, source_path, page?, line_start?, line_end? }
+- Citation = { doc_id, source_path, page?, line? , text_excerpt }
+- JSONL: one JSON object per line. Ensure trailing newline.
+
+
+# Determinism
+- Sort file lists lexicographically. Seed any randomness with 0 (though none expected).
+- Stable IDs: SHA1 over canonical strings (e.g., doc_path + checksum) and chunk ordinal.
+
+
+# CLI
+- Command: dkc build --in <folder> --out <folder>
+- Optional: dkc inspect --file <path>
+
+
+# Testing
+- Add tests that run on two small sample files (TXT). Assert outputs exist and basic fields are populated.
+
+
+# Logging
+- Log one line per doc: {doc, pages, bytes, card_ok, n_chunks}.
+
+
+# Error Handling
+- Skip unreadable files with a warning, continue pipeline. Include skipped list in manifest.
+
+
+# Future Hooks (commented stubs)
+- Embeddings provider interface
+- BM25 index build

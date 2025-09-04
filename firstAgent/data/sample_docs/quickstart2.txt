@@ -1,0 +1,10 @@
+Machine Learning Overview
+
+Machine Learning (ML) enables computers to learn patterns from data without explicit programming.
+
+Types of ML:
+- Supervised Learning: Uses labeled training data
+- Unsupervised Learning: Finds hidden patterns
+- Reinforcement Learning: Learns through trial and error
+
+Common algorithms include Linear Regression, Decision Trees, and Neural Networks.
