@@ -1,0 +1,35 @@
+# Goal
+Build a tiny, offline agent that reads a .txt/.md file and emits the top 5 “highlight” lines with reasons and line-number citations.
+
+# Non-Goals
+No LLMs, no network, no dependencies beyond basics. Deterministic.
+
+# I/O
+Input: --path <file.txt|md>
+Outputs:
+1) highlights.json  → array of {rank:int, line_no:int, text:str, reason:str}
+2) highlights.md    → checklist with line refs
+
+# Determinism
+- Sort ties by (score desc, line_no asc).
+- Treat CRLF/LF uniformly; strip trailing spaces; preserve original line text.
+
+# Scoring rubric (add constants in code, but keep behavior exact)
++1 if line ends with period `.`
++1 if contains any keyword (case-insensitive): {summary, key, result, finding, todo}
++1 if starts with bullet (`- ` or `• `)
++1 if 40 ≤ len(line) ≤ 160
+−1 if line is ALL CAPS (letters only)
+Ignore empty/whitespace-only lines.
+
+# Selection
+Compute score for each line. Keep top 5 after scoring; produce reasons listing matched criteria (e.g., "bullet; len=72; keyword=result").
+
+# UX
+CLI: hi5 pick --path <file>
+Logs: one summary line (total_lines, candidates, selected).
+
+# Testing
+- Smoke test on small sample.
+- Determinism test: same input → same JSON.
+

@@ -1,0 +1,32 @@
+[
+  {
+    "rank": 1,
+    "line_no": 7,
+    "text": "- The algorithm works well for structured content.",
+    "reason": "period; bullet; len=50"
+  },
+  {
+    "rank": 2,
+    "line_no": 8,
+    "text": "- Bullet points are often important highlights.",
+    "reason": "period; bullet; len=47"
+  },
+  {
+    "rank": 3,
+    "line_no": 12,
+    "text": "Our testing shows that the scoring system effectively identifies the most relevant content. The key is to balance different scoring criteria.",
+    "reason": "period; keyword=key; len=141"
+  },
+  {
+    "rank": 4,
+    "line_no": 26,
+    "text": "• This bullet point uses a different bullet character and should also score well.",
+    "reason": "period; bullet; len=81"
+  },
+  {
+    "rank": 5,
+    "line_no": 30,
+    "text": "The final result shows that our implementation works as expected.",
+    "reason": "period; keyword=result; len=65"
+  }
+]

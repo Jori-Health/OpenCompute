@@ -1,0 +1,28 @@
+# Project Notes
+
+## Summary
+This is a sample document for testing the hi5 highlight picker.
+
+## Key Findings
+- The algorithm works well for structured content.
+- Bullet points are often important highlights.
+
+## Results
+Our testing shows that the scoring system effectively identifies the most relevant content.
+
+## TODO Items
+- Add more test cases
+- Improve error handling
+
+## Additional Notes
+This line is quite long and should score well due to its length being within the optimal range for readability and comprehension.
+
+SHORT LINE
+
+This is another good candidate because it ends with a period and has a reasonable length that falls within our scoring criteria.
+
+• This bullet point uses a different bullet character and should also score well.
+
+FINAL THOUGHTS - THIS LINE IS ALL CAPS AND SHOULD BE PENALIZED
+
+The final result shows that our implementation works as expected.

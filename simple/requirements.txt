@@ -1,0 +1,4 @@
+click
+pydantic>=2
+loguru
+pytest
